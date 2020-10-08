@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <style></style>
+  </head>
+
+  <body>
+    <h1>BINGO!!!</h1>
+    <div id="cellsContainer"></div>
+  </body>
+  <script>
+    function createCells() {
+      let parentDiv = document.querySelector("#cellsContainer"); // riferimento al parent div
+      for (let x = 1; x <= 76; x++) {
+        // ciclo che viene eseguito 76 volte
+        let cell = document.createElement("div"); // creo la mia cella senza niente
+        cell.style.width = "50px"; // fisso la larghezza
+        cell.style.height = "50px"; // fisso l'altezza
+        cell.style.backgroundColor = "green"; // fisso il colore
+        cell.innerText = x; // assegno come numero la variabile x che viene incrementata dopo ogni cella creata
+        // cella finita
+        parentDiv.appendChild(cell); // appendo la mia cella finita al mio div con id cellsContainer
+      }
+    }
+    function generateRandom() {
+      var x = document.getElementById("demo");
+      x.innerHTML = Math.floor(Math.random() * 76 + 1);
+    }
+  </script>
+</html>
